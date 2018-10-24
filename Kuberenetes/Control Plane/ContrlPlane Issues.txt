@@ -1,0 +1,34 @@
+Prerequesites
+
+Clone it first no matter what !! Do not download as zip. .git is required for builds.
+
+1. Install openjdk 64bit
+
+http://javadl.oracle.com/webapps/download/AutoDL?BundleId=234474_96a7b8442fe848ef90c96a2fad6ed6d1
+
+2. Configure OpenVPN
+
+https://paxata.atlassian.net/wiki/display/OPS/Setup+your+VPN+account+to+connect+to+our+Dev+Environment
+
+3. In Step 4 the 1st docker pull should be as below
+docker pull dtr.paxatadev.com/paxata/release_aws_gateway_db2.3.0:2018.2.0.3.1646
+
+4. In Step 5 check docker images
+replace -->
+cp/main/build/k8s/k8s-dev.yaml" file. By altering the docker image name from pr to dev
+
+
+Errors -->>
+
+pull access denied for dtr.paxatadev.com/paxata/paxata-base, repository does not exist or may require 'docker login'
+
+resol-->
+docker login dtr.paxatadev.com/paxata/paxata-base
+
+
+Not using any bundled libraries, so you better have the tableau sdk installed on your system (the connector-tableau tests will almost certainly fail)
+
+
+{
+  "code": "NOT_AUTHENTICATED",
+  "message": "The client is not authenticated."
